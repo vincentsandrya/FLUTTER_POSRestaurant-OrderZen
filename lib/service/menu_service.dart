@@ -1,9 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_posrestaurant_orderzen/model/menu_model.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class MenuService {
   final Dio _dio = Dio();
-  final String baseUrl = 'http://192.168.18.15:8081/api/v1/';
+
+  final baseUrl = dotenv.env['API_URL'];
 
   Future<List<MenuModel>> fetchMenu() async {
     try {

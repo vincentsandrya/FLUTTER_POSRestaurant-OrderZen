@@ -64,7 +64,6 @@ class MenuDetailController extends GetxController {
       errorMessage.value = '';
       final fetchedMenus = await MenuService().fetchDetailMenu(menuId);
 
-      // Use assignAll for better performance with RxList
       menu.value = (fetchedMenus);
     } catch (e) {
       errorMessage.value = 'Failed to load menus: ${e.toString()}';

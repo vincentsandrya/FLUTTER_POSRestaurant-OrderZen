@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_posrestaurant_orderzen/routes/app_routes_named.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({super.key});
@@ -70,6 +72,19 @@ class AccountPage extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: ListView(
                 children: [
+                  Center(
+                    child: Text(
+                      "Vincent Sandrya",
+                      style: TextStyle(fontSize: 20, color: Color(0xff578FCA)),
+                    ),
+                  ),
+                  Center(
+                    child: Text(
+                      "Software Engineer",
+                      style: TextStyle(fontSize: 16, color: Color(0xff578FCA)),
+                    ),
+                  ),
+                  SizedBox(height: 12),
                   Card(
                     elevation: 2,
                     shape: RoundedRectangleBorder(
@@ -91,7 +106,7 @@ class AccountPage extends StatelessWidget {
                       subtitle: Text(
                         'View my core competencies',
                         style: TextStyle(
-                          fontSize: 14,
+                          fontSize: 13,
                           color: Color(0xff578FCA),
                         ),
                       ),
@@ -99,9 +114,9 @@ class AccountPage extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            _buildTechItem(FontAwesomeIcons.google, 'Go'),
-                            _buildTechItem(FontAwesomeIcons.react, 'React'),
-                            _buildTechItem(
+                            _expansionChild(FontAwesomeIcons.google, 'Go'),
+                            _expansionChild(FontAwesomeIcons.react, 'React'),
+                            _expansionChild(
                               FontAwesomeIcons.mobileScreen,
                               'Flutter',
                             ),
@@ -111,20 +126,79 @@ class AccountPage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  // ExpansionTile(
-                  //   title: Text('Section 2'),
-                  //   leading: Icon(Icons.settings),
-                  //   children: [
-                  //     ListTile(title: Text('Details for Section 2')),
-                  //   ],
-                  // ),
-                  // ExpansionTile(
-                  //   title: Text('Section 3'),
-                  //   leading: Icon(Icons.help),
-                  //   children: [
-                  //     ListTile(title: Text('Details for Section 3')),
-                  //   ],
-                  // ),
+                  Card(
+                    elevation: 2,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12), // Border radius
+                      side: BorderSide(
+                        color: Colors.grey[300]!,
+                      ), // Border color
+                    ),
+                    child: ExpansionTile(
+                      leading: Icon(Icons.code, color: Colors.blue),
+                      title: Text(
+                        "Let's Connect",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xff578FCA),
+                        ),
+                      ),
+                      subtitle: Text(
+                        'Happy to connect or collaborate',
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: Color(0xff578FCA),
+                        ),
+                      ),
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            _expansionChild(
+                              FontAwesomeIcons.linkedin,
+                              'Linkedin',
+                            ),
+                            _expansionChild(FontAwesomeIcons.whatsapp, 'WA'),
+                            _expansionChild(FontAwesomeIcons.envelope, 'Email'),
+                          ],
+                        ),
+                        SizedBox(height: 12), // Additional spacing
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 100),
+                  Center(
+                    child: InkWell(
+                      onTap: () => {},
+                      child: Text(
+                        "Change Password",
+                        style: TextStyle(color: Color(0xffFADA7A)),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 12),
+                  SizedBox(
+                    height: 52,
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        backgroundColor: Colors.white70,
+                      ),
+                      onPressed: () =>
+                          Get.offAllNamed(AppRoutesNamed.getStartedPage),
+                      child: Text(
+                        "Logout",
+                        style: TextStyle(color: Color(0xff578FCA)),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 12),
+                  Center(child: Text("App Version v1.0.1")),
+                  SizedBox(height: 12),
                 ],
               ),
             ),
@@ -134,11 +208,12 @@ class AccountPage extends StatelessWidget {
     );
   }
 
-  Widget _buildTechItem(IconData icon, String text) {
+  Widget _expansionChild(IconData icon, String text) {
     return SizedBox(
-      width: 120,
+      width: 100,
       child: Column(
         children: [
+          SizedBox(height: 12),
           FaIcon(icon, size: 36, color: Color(0xff578FCA)),
           SizedBox(height: 12),
           Text(text, style: TextStyle(fontSize: 16, color: Color(0xff578FCA))),

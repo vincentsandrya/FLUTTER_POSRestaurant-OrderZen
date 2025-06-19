@@ -11,8 +11,6 @@ class MenuDetailPage extends StatelessWidget {
         ? Get.find<MenuDetailController>()
         : Get.put(MenuDetailController());
 
-    print("MenuDetail");
-
     return Scaffold(
       body: SizedBox(
         child: Column(

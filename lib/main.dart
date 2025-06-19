@@ -4,7 +4,7 @@ import 'package:flutter_posrestaurant_orderzen/routes/app_routes_named.dart';
 import 'package:get/get.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() async {
+Future<void> main() async {
   await dotenv.load();
   runApp(const MyApp());
 }
