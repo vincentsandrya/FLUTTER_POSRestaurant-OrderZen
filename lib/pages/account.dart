@@ -135,7 +135,7 @@ class AccountPage extends StatelessWidget {
                       ), // Border color
                     ),
                     child: ExpansionTile(
-                      leading: Icon(Icons.code, color: Colors.blue),
+                      leading: Icon(Icons.connect_without_contact, color: Colors.blue),
                       title: Text(
                         "Let's Connect",
                         style: TextStyle(

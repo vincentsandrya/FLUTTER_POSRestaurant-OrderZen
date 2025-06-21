@@ -37,39 +37,15 @@ class LoginPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Spacer(),
+                  SizedBox(height: 80),
                   CustomTextFormField(
                     label: "Masukkan email",
                     onChanged: (val) => authController.email.value = val,
                   ),
-                  // TextFormField(
-                  //   onChanged: (val) => authController.email.value = val,
-                  //   decoration: InputDecoration(
-                  //     label: Text(
-                  //       "Masukkan email",
-                  //       style: TextStyle(color: Color(0xffC0C0C0)),
-                  //     ),
-                  //     border: OutlineInputBorder(
-                  //       borderSide: BorderSide(color: Color(0xffC0C0C0)),
-                  //     ),
-                  //   ),
-                  // ),
                   CustomTextFormField(
                     label: "Password",
                     onChanged: (val) => authController.password.value = val,
                   ),
-                  // TextFormField(
-                  //   onChanged: (val) => authController.password.value = val,
-                  //   decoration: InputDecoration(
-                  //     label: Text(
-                  //       "Password",
-                  //       style: TextStyle(color: Color(0xffC0C0C0)),
-                  //     ),
-                  //     border: OutlineInputBorder(
-                  //       borderSide: BorderSide(color: Color(0xffC0C0C0)),
-                  //     ),
-                  //   ),
-                  // ),
                   Wrap(
                     alignment: WrapAlignment.center,
                     children: [

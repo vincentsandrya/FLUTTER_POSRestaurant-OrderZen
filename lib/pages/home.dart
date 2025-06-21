@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_posrestaurant_orderzen/controller/auth_controller.dart';
+import 'package:flutter_posrestaurant_orderzen/routes/app_routes_named.dart';
 import 'package:get/get.dart';
 // import 'package:google_fonts/google_fonts.dart';
 
@@ -86,7 +87,7 @@ class HomePage extends StatelessWidget {
                 _buildMenuButton(
                   icon: Icons.history,
                   label: 'History',
-                  onTap: () => print('History tapped'),
+                  onTap: () => {Get.toNamed(AppRoutesNamed.orderListPage)},
                 ),
               ],
             ),

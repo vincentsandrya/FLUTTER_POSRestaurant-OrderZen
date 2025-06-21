@@ -7,4 +7,6 @@ class AppRoutesNamed {
   static const String mainPage = '/main';
   static const String menuPage = '/menu';
   static const String menuDetailPage = '/menu/:id';
+  static const String orderPage = '/order';
+  static const String orderListPage = '/order-list';
 }

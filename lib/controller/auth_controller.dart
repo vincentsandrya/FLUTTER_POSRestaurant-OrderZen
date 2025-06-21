@@ -1,6 +1,5 @@
 // import 'package:flutter_posrestaurant_orderzen/model/user_model.dart';
 import 'package:flutter_posrestaurant_orderzen/service/auth_service.dart';
-import 'package:flutter_posrestaurant_orderzen/service/order_service.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart'; // Still needed for Colors
 
@@ -14,10 +13,7 @@ class AuthController extends GetxController {
     try {
       isLoading.value = true;
 
-      final res2 = await OrderService().order();
       final response = await AuthService().login(email.value, password.value);
-
-      print(res2);
 
       name.value = response.name;
 

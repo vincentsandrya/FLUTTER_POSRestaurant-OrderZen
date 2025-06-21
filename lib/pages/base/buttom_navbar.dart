@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_posrestaurant_orderzen/pages/account.dart';
 import 'package:flutter_posrestaurant_orderzen/pages/home.dart';
-import 'package:flutter_posrestaurant_orderzen/pages/menu.dart';
+import 'package:flutter_posrestaurant_orderzen/pages/menu/menu_page.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
